@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
 <html>
   <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -43,6 +53,11 @@ p {
               <li><a class="dropdown-item" href="HowWillMusic.html">How Will Music Adapt To Us?</a></li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.instagram.com/jacobterkel/" tabindex="-1" aria-disabled="true" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+</svg></a>
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li> -->
@@ -59,9 +74,45 @@ p {
 <h2>Math</h2>
   <hr>
 <main>
+  $\require{bbox}\require{ams}$
 $$\huge\text{An Investigation Into Complete Sum-Free Sets}$$
 $$2A=\{a_1+a_2\;|\;a_1,a_2\in A\}$$
+<p>Over the course of my spring semester of my first year at Gettysburg College, I begun math research under the supervision of Béla Bajnok using his book "Additive Combinatorics: A Menu of Research Problems" as my primary source. Within the book, I elected to study an interesting but largely unexplored topic: complete sum-free sets. For anybody unfamilar with this concept, as it is a obscure concept in a relatively obscure field of math, I will provide a brief introduction to this concept and my research below.</p>
+<p>We define a <i>sumset</i> of two sets $A$ and $B$, denoted as $A+B$ to be the set of all possible sums picking one element from $A$ and one element from $B$. More presicely, we say that $A+B=\{a+b\;|\;a\in A, b\in B\}$. For example, if we let $A=\{1,3\}$ and $B=\{2,5\}$, then $A+B=\{1+2,1+5,3+2,3+5\}=\{3,5,6,8\}$. Furthermore, we define the $h$-fold sumset of a set $A$, written as $hA$ to be set of all possible sums of $h$ not nessicarily distinct elements in $A$. Again for example, the set $A=\{1,3,5\}$ the $2$-fold sumset of $A$ is $2A=\{1+1,1+3,1+5,3+3,3+5,5+5\}=\{2,4,6,8,10\}$.</p>
+<p>Now that you know what a sumset is, now I will define what "sum-free" means. Traditionally, a sum-free set usually refers to a set who's $2$-fold sumset has no elements in common with itself. This is written as $2A\cap A=\emptyset$. Note that set $A$ in the previous example is sum-free as $2A$ and $A$ have no elements in common. What I studied is an extende version of the sum-free property, called $(k,l)$-sum-free. A $(k,l)$-sum-free set is a set who's $k$-fold and $l$-fold sumset have no common elements, written as $kA\cap lA=\emptyset$, note that the traditional definition of a sum-free set is a $(2,1)$-sum-free set under the $(k,l)$ definition.</p>
+<p>Now is an important time to note, I am studying $(k,l)$-sum-free sets in cyclic groups, meaning instead of simply taking a sum, we will sum within a cyclic group $\mathbb{Z}_n$, and for those of you who are less math savvy, all this just means that after taking our sums, we will just look at the remainder of the sum when divided by $n$, this is called arithmetic modulo (or simply mod) $n$.</p>
+<p>Now, to define the final part of my topic of study, <i>completeness</i>. A complete $(k,l)$-sum-free set is a set that in addition to being sum-free in a cyclic group $\mathbb{Z}_n$, if you were to combine the two sets, together, they would form the entire group, written as $kA\cup lA=\mathbb{Z}_n$. Again, for my less math savvy readers, in addition to the two sets $kA$ and $lA$ having no elements in common mod $n$, together, every number between $0$ and $n-1$ appears in one of the two sets. For example if we look at the set $\{1,4\}$ in $\mathbb{Z}_5$, we have $2A=\{1+1,1+4,4+4\}=\{0,2,3\}$. We can see that $A$ and $2A$ have no elements in common, and together, they have every element from $0$ to $4,\;(5-1)$. This means the set $\{1,4\}$ is <b>complete $(2,1)$-sum-free</b> in $\mathbb{Z}_n$</p>
+<p>Now, what specifically was a studying? That is a lot hearder to answer, but in general I was <i>investigating</i> (hence the title) the distribution of such sets, and their properties. To give you a better idea of my research, below are a sample of questions related to this research, some of which I have solved, others of which I have not.</p>
+$$\bbox[5px, border: 2px solid black]{\textbf{Problem 1: } \text{For a given $k$ and $l$, for which values of $\mathbb{Z}_n$ have a complete $(k,l)$-sum-free set?}}$$
+As far as a solution to this problem goes, so far I have the following.
+$$\bbox[5px, border: 2px solid black]{\textbf{Theorem 2:}\text{ For every } n \text{ except } 1, 3, 7, \text{ and } 9, \mathbb{Z}_n\text{ has a complete } (2,1)\text{-sum-free subset.}}$$
+$$\bbox[5px, border: 2px solid black]{\textbf{Theorem 3:}\text{: For every }n\text{ except } 1,3,5,9,11,13,15,19, \text{ and } 31, \mathbb{Z}_n \text{has a complete} (4,1)\text{-sum-free subset.}}$$
+$$\bbox[5px, border: 2px solid black]{\textbf{Theorem 4:}\text{ When $k=2$ mod $4$, for all $n\geq k^3+k^2+5k+1$, $\mathbb{Z}_n$ has a complete $(k,1)$-sum-free subset.}}$$
+Another question that I have
+<p>Another question that is very interesting is the case of when a complete $(k,l)$-sum-free set is an <i>arithmetic progression</i>, and this question I have a complete answer to, it is as follows. </p>
 
+$$\bbox[5px, border: 2px solid black]{\begin{equation*}
+\begin{split}
+& \textbf{Theorem 5:} \text{ An arithmetic progression, $A$ is complete $(k,l)$-sum-free in $\mathbb{Z}_n$ if and only if}\\[1ex]
+& \text{(1) $n$ is even, $k\neq l$ mod $2$ and $A$ is the set of odd numbers less than $n$,} \textbf{ or}  \\[1ex]
+& \text{(2) $A$ is a dilation by a factor of $d$ of an interval of the form} \\[1ex]
+& d\cdot\left[\frac{1}{2}\left(\frac{jn}{\gcd(n,k-l)}-\frac{n-2}{k+l}\right),\frac{1}{2}\left(\frac{jn}{\gcd(n,k-l)}+\frac{n-2}{k+l}\right)\right]\\[1ex]
+& \text{Where all the following conditions hold}\\[1ex]
+& \text{1. $\gcd(n,d)=1$.}\\[1ex]
+& \text{2. $\frac{jn}{\gcd(n,k-l)}=\frac{n-2}{k+l}$ mod $2$.}\\[1ex]
+& \text{3. }k+l \;|\; n-2\text{.}\\[1ex]
+& \text{4. $n$ is divisible by $2^B$ where $B$ is the largest non-negative integer such that $2^B\;|\;k-l$.}\\[1ex]
+& \text{5. $j$ is odd.}
+\end{split}
+\end{equation*}}$$
+<p>Quite a complicated, yet complete result (pun intended), but it has very far reaching implications within the scope of complete $(k,l)$-sum-free sets. A follow up question I have to this is the case for when $A$ is the union of two intervals, or the problem</p>
+$$\bbox[5px, border: 2px solid black]{\textbf{Problem 6: } \text{Characterize when a set of the form $A=[a,b]\cup[c,d]$ is complete $(k,l)$-sum-free}}$$
+<p>This is the problem I am currently grappling with, but here are some others who's solutions/proofs have evaded me</p>
+$$\bbox[5px, border: 2px solid black]{\textbf{Problem 7:}\text{ Is every complete $(2,1)$-sum-free set nessicarily symmetric?}}$$
+$$\bbox[5px, border: 2px solid black]{\textbf{Problem 8:}\text{ Characterize all complete $(3,1)$-sum-free sets.}}$$
+$$\bbox[5px, border: 2px solid black]{\textbf{Problem 9:}\text{ What is the minimum size of a complete $(2,1)$-sum-free set?}}$$
+$$\bbox[5px, border: 2px solid black]{\textbf{Problem 10:}\text{ Does a complete $(4,2)$-sum-free set exist? (Or even just when $k$ and $l$ are both even.)}}$$
+This and much more are asked in my full investigation into this topic, which will be posted to this website eventually.
     </main>
     <footer>
 
