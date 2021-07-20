@@ -95,7 +95,7 @@ p {
     $\require{bbox}\require{ams}$
 $$2A=\{a_1+a_2\;|\;a_1,a_2\in A\}$$
 <p>This summer, one topic that I have tackled is the concept of signed zero-sum-free sets. Currently, there is nowhere near enough content to make a paper out of, thus I decided to make a blog post on the topic.</p>
-<p>We define a <i> h-fold signed sumset</i> of a set $A$, written as $h_± A$ to be the sum of all possible combinations of adding and subtracting $h$ (not nessicarily distinct) elements together from $A$, with the only rule being that you cannot add and subtract an element when determining the terms in $h_± A$. For example, given the set $A=\{3,5,11\}$: $3+3-5\in 3_± A$ and $-3-5+11\in 3_±A$ but, $3+5-5∉ 3_±A$.  </p>
+<p>We define a <i> h-fold signed sumset</i> of a set $A$, written as $h_± A$ to be the set of all possible combinations of adding and subtracting $h$ (not nessicarily distinct) elements together from $A$, with the only rule being that you cannot add and subtract the same element when determining a term in $h_± A$. For example, given the set $A=\{a,b,c\}$: $a+a-b\in 3_± A$ and $-a-b+c\in 3_±A$ but, $a+b-b∉ 3_±A$.  </p>
 <p>The next step is to define a zero-$h$-signed sum-free set. A set $A$ meets this criteria if and only if $0∉h_±A$. In this blog post, we will be discussing this concept only in regards to finite abelian groups, chiefly cyclic groups.  </p>
 <p>The main question I am seeking to answer is as follows</p>
 <p style="text-align:center"> <b>Problem 1: </b>Find a formula for $\tau_±(\mathbb{Z}_n,h)$, where $\tau_±(\mathbb{Z}_n,h)$ is equal to the maximum cardinality of a zero-$h$-signed sum-free subset of $\mathbb{Z}_n$.</p>
@@ -104,7 +104,7 @@ $$2A=\{a_1+a_2\;|\;a_1,a_2\in A\}$$
 <theorem>$\tau_±(\mathbb{Z}_n,3)=v_3(n,3)$</theorem>
 where
 <definition>$v_g(n,h)=\max\left\{\frac{n}{d}\left\lfloor\frac{d-1-\gcd(d,g)}{h}+1\right\rfloor\;|\;d\in D(n)\right\}$ Where $D(n)$ is the set of positive divisors of $n$.</definition>
-<p>I was able to derive this result from an unpblished result of mine, which I will definitely share the proof for in the future once it finishes the peer review process. This result concerns the same question we are asking today, but for the standard sumset case, and is much more general than the results being presented here. </p>
+<p>I was able to derive this result from an unpblished result of mine, which I will share in the future once it finishes the peer review process as I hope to get this result published. This result concerns the same question we are asking today, but for the standard sumset case, and is much more general than the results being presented here. </p>
 The case for $\tau_±(\mathbb{Z}_n,h)$ for even $h$ is much more complex, however I do have the followong results in regards to $\tau_±(\mathbb{Z}_n,5)$
 <theorem>For prime $p\geq 7$, we have that if $p=1,2,$ or $4$ mod $5$ then $\tau_±(\mathbb{Z}_p,5)=\left\lfloor\frac{p+3}{5}\right\rfloor$ if $p=3$ mod $5$ then $\tau_±(\mathbb{Z}_p,5)=\frac{p-3}{5}$. Furthermore, if $n$ is even $\tau_±(\mathbb{Z}_n,5)=\frac{n}{2}$, and lastly if $n$ is divisible by 5 but not any numbers 2, 3, or 4 mod 5 then $\tau_±(\mathbb{Z}_n,5)=\frac{n}{5}-1$</theorem>
 <p>This leaves one last case, and that is the remaining odd composite values of $n$. These are much trickier to develop a proof for than the prime case.</p>
