@@ -97,7 +97,7 @@ p {
     <a href="Challenge_Problems_Set_1.pdf" class="btn btn-warning btn-lg" id=wacky4>Challenge Problem Set 1</a>
     <a href="Challenge_Problems_Set_1_Sol.pdf" class="btn btn-outline-warning btn-lg" id=wacky5>Challenge Problem Set 1 (Solutions)</a>
     <a href="Challenge_Problems _Set_2.pdf" class="btn btn-warning btn-lg" id=wacky6>Challenge Problem Set 2</a>
-    <a href="Challenge_Problems_Set_3.pdf" class="btn btn-warning btn-lg" id=wacky7>Challenge Problem Set 3</a>
+    <a href="Challenge_Problems_Set_3.pdf" class="btn btn-warning btn-lg textColorChanging" id=wacky7>Challenge Problem Set 3</a>
   </div>
 
 
@@ -134,52 +134,73 @@ p {
       let color = "rgb("+r+","+g+","+b+")"
       let color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
       document.getElementById('wacky1').style.backgroundColor=color;
-      document.getElementById('wacky1').style.color=color2;
+      document.getElementById('wacky1').style.color=getContrastColor(r, g, b);
        r= 255*Math.random();
        g= 255*Math.random();
        b= 255*Math.random();
        color = "rgb("+r+","+g+","+b+")"
        color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
       document.getElementById('wacky2').style.backgroundColor=color;
-      document.getElementById('wacky2').style.color=color2;
+      document.getElementById('wacky2').style.color=getContrastColor(r, g, b);
        r= 255*Math.random();
        g= 255*Math.random();
        b= 255*Math.random();
        color = "rgb("+r+","+g+","+b+")"
        color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
       document.getElementById('wacky3').style.backgroundColor=color;
-      document.getElementById('wacky3').style.color=color2;
+      document.getElementById('wacky3').style.color=getContrastColor(r, g, b);
        r= 255*Math.random();
        g= 255*Math.random();
        b= 255*Math.random();
        color = "rgb("+r+","+g+","+b+")"
        color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
       document.getElementById('wacky4').style.backgroundColor=color;
-      document.getElementById('wacky4').style.color=color2;
+      document.getElementById('wacky4').style.color=getContrastColor(r, g, b);
        r= 255*Math.random();
        g= 255*Math.random();
        b= 255*Math.random();
        color = "rgb("+r+","+g+","+b+")"
        color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
       document.getElementById('wacky5').style.backgroundColor=color;
-      document.getElementById('wacky5').style.color=color2;
+      document.getElementById('wacky5').style.color=getContrastColor(r, g, b);
        r= 255*Math.random();
        g= 255*Math.random();
        b= 255*Math.random();
        color = "rgb("+r+","+g+","+b+")"
        color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
       document.getElementById('wacky6').style.backgroundColor=color;
-      document.getElementById('wacky6').style.color=color2;
+      document.getElementById('wacky6').style.color=getContrastColor(r, g, b);
       r= 255*Math.random();
       g= 255*Math.random();
       b= 255*Math.random();
       color = "rgb("+r+","+g+","+b+")"
       color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
      document.getElementById('wacky7').style.backgroundColor=color;
-     document.getElementById('wacky7').style.color=color2;
+     document.getElementById('wacky7').style.color=getContrastColor(r, g, b);
 
     }
+// Below code is from Peter Francis at https://peterefrancis.com/
+function pow(a,b) {
+  return a ** b
+}
 
+function getContrastColor(red, green, blue){
+  var L1 = 0.2126 * pow(red / 255, 2.2) + 0.7152 * pow(green / 255, 2.2) +  0.0722 * pow(blue / 255, 2.2);
+  var contrastRatio = 0;
+  if (L1 > 0) {
+      contrastRatio = parseInt(String((L1 + 0.05) / (0.05)));
+  } else {
+      contrastRatio = parseInt(String((0.05) / (L1 + 0.05)));
+  }
+  // If contrast is more than 5, return black
+  if (contrastRatio > 5) {
+      return '#000000';
+  } else {
+      // if not, return white
+      return '#FFFFFF';
+  }
+}
+// Above code is from Peter Francis at https://peterefrancis.com/
     </script>
   </body>
 </html>
