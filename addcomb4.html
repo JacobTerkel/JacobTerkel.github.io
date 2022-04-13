@@ -1,12 +1,25 @@
 <!DOCTYPE html>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
 <html>
   <head>
     <link rel="icon" href="eminem.jpeg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="https://PeterEFrancis.com/HTMLTeX/HTMLTeX.js"></script>
+    <link rel="stylesheet" href="https://PeterEFrancis.com/HTMLTeX/HTMLTeX.css">
     <title>Jacob's Website</title>
-
   </head>
 <body style="margin:10px;padding:10px">
 <style>
@@ -14,38 +27,6 @@ p {
   color: black;
   text-indent: 30px;
 
-}
-
-#subt{
-  color: grey;
-}
-#hide{
-  opacity: 0;
-}
-#hide:hover{
-  opacity: 1;
-}
-
-#wacky1 {
-  box-shadow: 5px 5px 3px grey;
-}
-#wacky2 {
-  box-shadow: 5px 5px 3px grey;
-}
-#wacky3 {
-  box-shadow: 5px 5px 3px grey;
-}
-#wacky4 {
-  box-shadow: 5px 5px 3px grey;
-}
-#wacky5 {
-  box-shadow: 5px 5px 3px grey;
-}
-#wacky6 {
-  box-shadow: 5px 5px 3px grey;
-}
-#wacky7 {
-  box-shadow: 5px 5px 3px grey;
 }
 </style>
 <header>
@@ -71,7 +52,6 @@ p {
                 <li><a class="dropdown-item" href="Threesumfree.pdf">Three Sum Free Problems</a></li>
                 <li><a class="dropdown-item" href="Number_Theory_Research.pdf">Quotient Rings</a></li>
                 <li><a class="dropdown-item" href="addcomb3.html">A Special Case Of The Restricted 3-Critical Number (Blog)</a></li>
-
               </ul>
             </li>
             <a class="nav-link" href="music.html">Music</a>
@@ -110,125 +90,28 @@ p {
   </nav>
 </header>
 <h1>Jacob Terkel</h1>
-<h2 id=subt>A page to catalog my math research, and other hobbies.</h2>
+<h2>Math</h2>
   <hr>
-  <p>Click any of the links below to access my work!</p>
 <main>
-  <div class="d-grid gap-4 col-6 mx-auto">
-    <a href="mathhub.html" class="btn btn-danger btn-lg" id='wacky1'>Math</a>
-    <a href="music.html" class="btn btn-primary btn-lg" id=wacky2>Music</a>
-    <a href="thought.html" class="btn btn-success btn-lg" id=wacky3>Thought</a>
-    <a href="Challenge_Problems_Set_1.pdf" class="btn btn-warning btn-lg" id=wacky4>Challenge Problem Set 1</a>
-    <a href="Challenge_Problems _Set_2.pdf" class="btn btn-warning btn-lg" id=wacky6>Challenge Problem Set 2</a>
-    <a href="Challenge_Problems_Set_3.pdf" class="btn btn-warning btn-lg" id=wacky7>Challenge Problem Set 3</a>
-    <a href="Challenge_Problems_Set_4 (1).pdf" class="btn btn-warning btn-lg" id=wacky7>Challenge Problem Set 4</a>
-
-
-
-    <a href="addcomb3.html" class="btn btn-info btn-lg" id=wacky7>A Special Case Of The Restricted 3-Critical Number (New Blog)</a>
-  </div>
-
-
+  <div id="LaTeX">
+  <h1 style="text-align:center">A Brief Introduction To Additive Combinatorics</h1>
+    $\require{bbox}\require{ams}$
+$$2 A=\{a_1+a_2\;|\;a_1,a_2\in A\}$$
+<p>In my previous three blog posts I have discussed my ongoing additive combinatorics research, but within those blogs I provide little background to the field itself. Here, I hope to offer some clarity as well as express what makes this field of math interesting to me through a problem. However, I am going to <i>begin</i> by introducing the problem. Then, we will go through a proof for it's solution, and then I will connect it back to additive combinatorics.  I should note, this blog post is designed for my less mathematically savy readers, and more elementry terminology is used for this reason.  Without further ado, the problem we will be solving is a reworded version of a problem from my first problem challenge set, and the statement is as follows.</p>
+<p style="text-align:center"> <b>Problem A: </b>Prove that in any set of seven who numbers, $A$, there must either exist a pair of distinct $x,y\in  A$ such that $x-y$ is a multiple of 15 or there exists three (not nessicarily distinct) $a,b,c\in A$ such that $a+b+c$ is a multiple of 15.  </p>
+<p>So, how do we approach such a problem? Well let us assume there is a set $A$ of seven whole numbers which is a counterexample to our claim. The first thing we can take note of is that for $x,y\in A$, if $x-y$ is divisible by 15 then the remainder of x when divided by 15, is the same is the remainder of y when divided by 15.  So, if $A$ does not have a pair of numbers in it that satisfy the first clause of the problem, then all the remainders when divided by 15 of the numbers in $A$ are different. Now, let us consider a new set $B$, which we form by taking every element in $A$, and multiplying it by $-2$. Note that if the remainder of $p$ when divided a
+</p>
+</div>
     </main>
     <footer>
-      <button onclick="wackybutton();" id='hide'>wacky</button>
+      <p>Posted Monday March 9, 2022</p>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <script>
-
-    // console.log('yo sup');
-    //
-    // let divisor=15; // local and changable
-    // let set=[1,2,3,4];
-    //
-    // // var b=2; // global and changale
-    //
-    // // const c=3; // local(?) and unchangable
-    // if (divisor==15) {
-    //   console.log('yo sup');
-    // }
-    //
-    // console.log(set);
-    //
-    // function yoyup(x,y){
-    //   return (x+y)/(x*y)
-    // }
-    // console.log(yoyup(3,2));
-
-    function wackybutton(){
-      let r= 255*Math.random();
-      let g= 255*Math.random();
-      let b= 255*Math.random();
-      let color = "rgb("+r+","+g+","+b+")"
-      let color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
-      document.getElementById('wacky1').style.backgroundColor=color;
-      document.getElementById('wacky1').style.color=getContrastColor(r, g, b);
-       r= 255*Math.random();
-       g= 255*Math.random();
-       b= 255*Math.random();
-       color = "rgb("+r+","+g+","+b+")"
-       color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
-      document.getElementById('wacky2').style.backgroundColor=color;
-      document.getElementById('wacky2').style.color=getContrastColor(r, g, b);
-       r= 255*Math.random();
-       g= 255*Math.random();
-       b= 255*Math.random();
-       color = "rgb("+r+","+g+","+b+")"
-       color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
-      document.getElementById('wacky3').style.backgroundColor=color;
-      document.getElementById('wacky3').style.color=getContrastColor(r, g, b);
-       r= 255*Math.random();
-       g= 255*Math.random();
-       b= 255*Math.random();
-       color = "rgb("+r+","+g+","+b+")"
-       color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
-      document.getElementById('wacky4').style.backgroundColor=color;
-      document.getElementById('wacky4').style.color=getContrastColor(r, g, b);
-       r= 255*Math.random();
-       g= 255*Math.random();
-       b= 255*Math.random();
-       color = "rgb("+r+","+g+","+b+")"
-       color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
-      document.getElementById('wacky5').style.backgroundColor=color;
-      document.getElementById('wacky5').style.color=getContrastColor(r, g, b);
-       r= 255*Math.random();
-       g= 255*Math.random();
-       b= 255*Math.random();
-       color = "rgb("+r+","+g+","+b+")"
-       color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
-      document.getElementById('wacky6').style.backgroundColor=color;
-      document.getElementById('wacky6').style.color=getContrastColor(r, g, b);
-      r= 255*Math.random();
-      g= 255*Math.random();
-      b= 255*Math.random();
-      color = "rgb("+r+","+g+","+b+")"
-      color2 = "rgb("+(255-r)+","+(255-g)+","+(255-b)+")"
-     document.getElementById('wacky7').style.backgroundColor=color;
-     document.getElementById('wacky7').style.color=getContrastColor(r, g, b);
-
-    }
-// Below code is from Peter Francis at https://peterefrancis.com/
-function pow(a,b) {
-  return a ** b
-}
-
-function getContrastColor(red, green, blue){
-  var L1 = 0.2126 * pow(red / 255, 2.2) + 0.7152 * pow(green / 255, 2.2) +  0.0722 * pow(blue / 255, 2.2);
-  var contrastRatio = 0;
-  if (L1 > 0) {
-      contrastRatio = parseInt(String((L1 + 0.05) / (0.05)));
-  } else {
-      contrastRatio = parseInt(String((0.05) / (L1 + 0.05)));
-  }
-  // If contrast is more than 5, return black
-  if (contrastRatio > 5) {
-      return '#000000';
-  } else {
-      // if not, return white
-      return '#FFFFFF';
-  }
-}
-// Above code is from Peter Francis at https://peterefrancis.com/
-    </script>
   </body>
+  <script type="text/x-mathjax-config">
+    new HTMLTeX(document.getElementById('LaTeX'), MathJax).render({
+      'highlight_links':false
+    });
+  </script>
 </html>
